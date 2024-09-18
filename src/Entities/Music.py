@@ -3,8 +3,9 @@ import time
 
 class Music:
     def __init__(self):
-        pygame.init()
+
         pygame.mixer.init()
+        self.get_ost()
         
 
     def get_ost(self):
@@ -13,10 +14,8 @@ class Music:
 
     def get_ending(self):
         time.sleep(0.1)
-        pygame.mixer.music.stop()
         
         pygame.mixer.music.load('audio/sonic.mp3')
-        pygame.mixer.music.set_volume(1.0)
         pygame.mixer.music.play(-1)
 
 
