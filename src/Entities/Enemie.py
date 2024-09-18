@@ -1,32 +1,24 @@
 import pygame
+from random import randint
 
 class Enemie:
     def __init__(self):
         self.enemie_surface()
-        self.enemie_position()
-        self.enemie_rectangle()
         self.timer()
+        self.obstacle_rect_list = []
+        self.min_distance = 300  # Ajuste conforme necessário
 
     def enemie_surface(self):
         self.enemie_surf = pygame.image.load('graphics/shadow1.png').convert_alpha()
 
     def get_surface(self):
         return self.enemie_surf
-    
-    def enemie_position(self):
-        self.enemie_x_pos = 600
-        self.enemie_y_pos = 300
-
-    def enemie_rectangle(self):
-        self.enemie_rect = self.enemie_surf.get_rect(bottomright=(self.enemie_x_pos, self.enemie_y_pos))
-        return self.enemie_rect
-
-    def update_position(self):
-        self.enemie_rect.x -= 4
-        if self.enemie_rect.right <= 0:
-            self.enemie_rect.left = 800
 
     def timer(self):
-        # Lembre-se de configurar o timer onde for necessário
         self.obstacle_timer = pygame.USEREVENT + 1
-        pygame.time.set_timer(self.obstacle_timer, 900)
+        pygame.time.set_timer(self.obstacle_timer, 800)  # Intervalo para criar novos inimigos
+
+    def update_obstacles(self):
+        for obstacle_rect in self.obstacle_rect_list:
+            obstacle_rect.x -= 4  # Velocidade dos inimigos
+        self.obstacle_rect_list = [obstacle_rect for obstacle_rect in self.obstacle_rect_list if obstacle_rect.right > 0]
