@@ -29,3 +29,4 @@ class Enemie:
     def timer(self):
         # Lembre-se de configurar o timer onde for necessário
         self.obstacle_timer = pygame.USEREVENT + 1
+        pygame.time.set_timer(self.obstacle_timer, 900)
