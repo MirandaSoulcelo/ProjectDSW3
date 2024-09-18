@@ -20,6 +20,7 @@ class Game:
         self.enemie = Enemie()
         self.score = Score()
         self.music_playing = False
+        self.ending_playing = False
         self.clock()
 
     def game_state(self):
@@ -58,7 +59,7 @@ class Game:
                     self.game_active = True
                     self.enemie.obstacle_rect_list = []  # Limpa a lista de inimigos
                     self.score.reset_score()
-                    if not self.music_playing:
+                    if not self.music_playing and self.game_active == True:
                         self.music.get_ost()
                         self.music_playing = True
 
@@ -73,8 +74,11 @@ class Game:
                 self.score.score_surface()
                 self.surface.draw(self.player, self.enemie, self.score)
             else:
-                pygame.mixer.music.stop()
+                self.game_active = False
                 self.music_playing = False
                 self.surface.show_game_over(self.score.current_time, self.game_active)
+                if not self.ending_playing and self.score.current_time != 0:
+                    self.music.get_ending()
+                    self.ending_playing = True
             pygame.display.update()
             self.clocktime.tick(60)
