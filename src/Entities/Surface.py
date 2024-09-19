@@ -14,7 +14,7 @@ class Surface:
 
 
     def screenWindow(self):
-        pygame.display.set_caption('JumpBro')
+        pygame.display.set_caption('JumpSora')
         self.screen = pygame.display.set_mode((800, 400))
 
     def test_surface(self):
@@ -38,7 +38,7 @@ class Surface:
         self.font3 = pygame.font.Font('font/Pixeltype.ttf', 25)
         self.game_over_text = self.font.render('GAME OVER', True, (255, 255, 255))
         self.restart = self.font2.render('Press Space to start', True, (255, 255, 255))
-        self.title = self.font2.render('JumpBro', True, (255, 255, 255))
+        self.title = self.font2.render('JumpSora!', True, (255, 255, 255))
 
     def update_joke(self):
         self.joke = get_defeat_joke()  # Atualiza a piada
