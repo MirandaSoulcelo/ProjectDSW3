@@ -21,12 +21,19 @@ e consumo de API.
 
 
 
-Linguagem utilizada: Python 3.12.6
+
+
+
+
 
 Ferramentas  utilizadas:
 Pygame: https://www.pygame.org/docs/ref/pygame.html
 requests: https://pypi.org/project/requests/
 Joke Api: https://v2.jokeapi.dev/
+Linguagem utilizada: Python 3.12.6
+
+
+
 
 
 
@@ -34,10 +41,13 @@ Joke Api: https://v2.jokeapi.dev/
 
 Créditos aos artistas
 Sprites Kingdom Hearts Chain of Memories: https://www.spriters-resource.com/game_boy_advance/khcom/sheet/1029/
+
 Night Sky: https://br.pinterest.com/pin/747175394421726688/   - Jezz Andz
+
 Ground: https://github.com/clear-code-projects/UltimatePygameIntro
 Kingdom Hearts OST "Heartless Theme": https://en.wikipedia.org/wiki/Music_of_Kingdom_Hearts
-Sonic Game Over Music: https://pt.wikipedia.org/wiki/Sonic_the_Hedgehog_2#:~:text=O%20jogo%20foi%20dirigido%20por,foi%20composta%20por%20Masato%20Nakamura.
+Sonic Game Over Music: 
+https://pt.wikipedia.org/wiki/Sonic_the_Hedgehog_2#:~:text=O%20jogo%20foi%20dirigido%20por,foi%20composta%20por%20Masato%20Nakamura.
 
 
 
