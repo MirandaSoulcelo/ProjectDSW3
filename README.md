@@ -31,7 +31,7 @@ e consumo de API.
 
 ## Requisitos
 
-Este software é projetado para funcionar apenas em sistemas desktop. Atualmente, não há suporte para versões móveis ou web.
+Este software é projetado para funcionar apenas em sistemas desktop(testado apenas no Windows). Atualmente, não há suporte para versões móveis ou web.
 
 
 
