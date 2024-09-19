@@ -57,7 +57,7 @@ Este software é projetado para funcionar apenas em sistemas desktop(testado ape
 
 ## Instalação
 - para utilizar as dependências necessárias, baixe os arquivos deste projeto.
-- Após isto, abra o prompt de comando(digite cmd na barra de pesquisa do Windows) e digite "pip install -r requirements.txt"
+- Após isto, abra o prompt de comando(digite cmd na barra de pesquisa do Windows) e digite "pip install -r requirements.txt"(lembre-se de acessar no diretório onde o arquivo se encontra).
 -  rode no editor de código que preferir.
 
 
@@ -67,6 +67,8 @@ Este software é projetado para funcionar apenas em sistemas desktop(testado ape
 - Night Sky: https://br.pinterest.com/pin/747175394421726688/   - Jezz Andz
 
 - Ground: https://github.com/clear-code-projects/UltimatePygameIntro
+
+- Fontes utilizadas: https://github.com/clear-code-projects/UltimatePygameIntro
 
 - Kingdom Hearts OST "Heartless Theme": https://en.wikipedia.org/wiki/Music_of_Kingdom_Hearts
 
