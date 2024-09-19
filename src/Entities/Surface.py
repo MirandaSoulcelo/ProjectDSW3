@@ -35,7 +35,7 @@ class Surface:
     def setup_fonts(self):
         self.font = pygame.font.Font('font/Pixeltype.ttf', 74)
         self.font2 = pygame.font.Font('font/Pixeltype.ttf', 50)
-        self.font3 = pygame.font.Font('font/Pixeltype.ttf', 25)
+        self.font3 = pygame.font.Font('font/Pixeltype.ttf', 20)
         self.game_over_text = self.font.render('GAME OVER', True, (255, 255, 255))
         self.restart = self.font2.render('Press Space to start', True, (255, 255, 255))
         self.title = self.font2.render('JumpSora!', True, (255, 255, 255))
