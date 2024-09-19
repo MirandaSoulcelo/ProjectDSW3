@@ -11,6 +11,7 @@ e consumo de API.
 
 
 
+
 ![JumpSora!](https://github.com/user-attachments/assets/a3db24ce-4c3f-47b0-b047-82b914f19a1d)
 
 
@@ -22,6 +23,10 @@ e consumo de API.
 
 ![GameOver](https://github.com/user-attachments/assets/69849d67-caf6-41b9-bd54-ecba17123722)
 
+
+
+
+![GameOver3](https://github.com/user-attachments/assets/567918c3-e029-4905-9257-9c6a0b177348)
 
 
 
