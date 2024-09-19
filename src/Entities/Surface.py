@@ -1,12 +1,17 @@
 import pygame
 from random import randint
+
 from sys import exit
+
+from Api import get_defeat_joke 
 
 class Surface:
     def __init__(self):
         self.screenWindow()
         self.test_surface()
         self.setup_fonts()
+        self.update_joke()  # A cada instância vou atualizando a piada
+
 
     def screenWindow(self):
         pygame.display.set_caption('JumpBro')
@@ -25,15 +30,18 @@ class Surface:
         for rect in enemie.obstacle_rect_list:
             self.screen.blit(enemie.get_surface(), rect)
 
-        # Desenha o jogador
         self.screen.blit(player.get_surface(), player.player_rect)
 
     def setup_fonts(self):
         self.font = pygame.font.Font('font/Pixeltype.ttf', 74)
         self.font2 = pygame.font.Font('font/Pixeltype.ttf', 50)
+        self.font3 = pygame.font.Font('font/Pixeltype.ttf', 25)
         self.game_over_text = self.font.render('GAME OVER', True, (255, 255, 255))
         self.restart = self.font2.render('Press Space to start', True, (255, 255, 255))
         self.title = self.font2.render('JumpBro', True, (255, 255, 255))
+
+    def update_joke(self):
+        self.joke = get_defeat_joke()  # Atualiza a piada
 
     def show_game_over(self, final_score, game_state):
         self.screen.fill('Black')
@@ -48,3 +56,7 @@ class Surface:
             final_S = self.font.render(f'Your Score: {final_score}', True, (255, 255, 255))
             self.screen.blit(final_S, (self.screen.get_width() // 2 - final_S.get_width() // 2,
                                        self.screen.get_height() // 2 + final_S.get_height() // 2 - 150))
+         
+            joke_text = self.font3.render(self.joke, True, (255, 255, 255))
+            self.screen.blit(joke_text, (self.screen.get_width() // 2 - joke_text.get_width() // 2,
+                                         self.screen.get_height() // 2 + joke_text.get_height() // 2))

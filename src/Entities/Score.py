@@ -16,7 +16,7 @@ class Score:
 
     def score_surface(self):
         self.current_time = (pygame.time.get_ticks() // 100) - self.start_score
-        self.score_surf = self.text.render(f'Score: {self.current_time}', False, (30, 0, 0)) #text, AA, color(Antialisgn) como estou trabalhando com pixel art, será false 
+        self.score_surf = self.text.render(f'Score: {self.current_time}', False, (30, 0, 0))
 
 
     def get_surface(self):

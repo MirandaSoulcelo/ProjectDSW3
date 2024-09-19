@@ -2,15 +2,28 @@ import pygame
 
 class Player:
     def __init__(self):
-        self.player_surface()
+        self.frame_index = 0 
+        self.player_surfaces()  
         self.player_rectangle()
         self.is_jumping = False
         self.gravity = 0
         self.jump_strength = -20
 
+        self.animation_speed = 0.2  
 
-    def player_surface(self):
-        self.player_surf = pygame.image.load('graphics/Runningsora2.png').convert_alpha()
+    def player_surfaces(self):
+   
+        self.run_frames = [
+            pygame.image.load('graphics/PlayerSoraJump/Runningsora8.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/Runningsora7.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/Runningsora6.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/Runningsora5.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/Runningsora4.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/Runningsora3.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/Runningsora2.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/Runningsora1.png').convert_alpha(),
+        ]
+        self.player_surf = self.run_frames[self.frame_index]
 
     def get_surface(self):
         return self.player_surf
@@ -19,14 +32,17 @@ class Player:
         self.player_rect = self.player_surf.get_rect(midbottom=(50, 300))
         return self.player_rect
 
-    def update_position(self, p):
-        # self.player_rect.left += p
-        self.teste = print(self.player_rect)
-        return self.teste
+    def animate(self):
+        
+        self.frame_index += self.animation_speed
+        if self.frame_index >= len(self.run_frames):
+            self.frame_index = 0
+        # Atualiza a superfície do jogador
+        self.player_surf = self.run_frames[int(self.frame_index)]
 
     def player_gravity(self):
         if self.is_jumping:
-            self.gravity += 1  # Simula a aceleração da gravidade
+            self.gravity += 1  
 
         self.player_rect.y += self.gravity
 
@@ -46,4 +62,3 @@ class Player:
             if not self.is_jumping:
                 self.is_jumping = True
                 self.gravity = self.jump_strength
-

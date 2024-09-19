@@ -1,0 +1,177 @@
+import pygame
+from Api import get_defeat_joke, translate_text
+
+class Surface:
+    def __init__(self):
+        self.screenWindow()
+        self.test_surface()
+        self.setup_fonts()
+        self.joke = self.get_and_translate_joke()  # Obtém e traduz a piada ao iniciar a instância
+
+    def screenWindow(self):
+        pygame.display.set_caption('JumpBro')
+        self.screen = pygame.display.set_mode((800, 400))
+
+    def test_surface(self):
+        self.sky_surface = pygame.image.load('graphics/NightSky3.png').convert()
+        self.ground_surface = pygame.image.load('graphics/ground.png').convert()
+
+    def draw(self, player, enemie, score):
+        self.screen.blit(self.sky_surface, (0, 0))
+        self.screen.blit(self.ground_surface, (0, 300))
+        self.screen.blit(score.get_surface(), score.score_rect)
+
+        # Desenha os inimigos
+        for rect in enemie.obstacle_rect_list:
+            self.screen.blit(enemie.get_surface(), rect)
+
+        # Desenha o jogador
+        self.screen.blit(player.get_surface(), player.player_rect)
+
+    def setup_fonts(self):
+        self.font = pygame.font.Font('font/Pixeltype.ttf', 74)
+        self.font2 = pygame.font.Font('font/Pixeltype.ttf', 50)
+        self.font3 = pygame.font.Font('font/Pixeltype.ttf', 30)
+        self.game_over_text = self.font.render('GAME OVER', True, (255, 255, 255))
+        self.restart = self.font2.render('Press Space to start', True, (255, 255, 255))
+        self.title = self.font2.render('JumpBro', True, (255, 255, 255))
+
+    def get_and_translate_joke(self):
+        # Obtém a piada e traduz para português
+        joke = get_defeat_joke()
+        return translate_text(joke, target_lang='pt')
+
+    def show_game_over(self, final_score, game_state):
+        self.screen.fill('Black')
+        if final_score == 0 and not game_state:
+            self.screen.blit(self.restart, (self.screen.get_width() // 2 - self.restart.get_width() // 2,
+                                           self.screen.get_height() // 2 + self.restart.get_height() // 2 - 70))
+            self.screen.blit(self.title, (self.screen.get_width() // 2 - self.title.get_width() // 2,
+                                          self.screen.get_height() // 2 + self.title.get_height() // 2 - 150))
+        else:
+            self.screen.blit(self.game_over_text, (self.screen.get_width() // 2 - self.game_over_text.get_width() // 2,
+                                                   self.screen.get_height() // 2 - self.game_over_text.get_height() // 2 - 150))
+            final_S = self.font.render(f'Your Score: {final_score}', True, (255, 255, 255))
+            self.screen.blit(final_S, (self.screen.get_width() // 2 - final_S.get_width() // 2,
+                                       self.screen.get_height() // 2 + final_S.get_height() // 2 - 150))
+            # Exibe a piada traduzida
+            joke_text = self.font3.render(self.joke, True, (255, 255, 255))
+            self.screen.blit(joke_text, (self.screen.get_width() // 2 - joke_text.get_width() // 2,
+                                         self.screen.get_height() // 2 + joke_text.get_height() // 2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Game:
+    def __init__(self):
+        pygame.init()
+        pygame.mixer.init()
+        self.game_state()
+        self.surface = Surface()
+
+        self.music = Music()
+        self.player = Player()
+        self.enemie = Enemie()
+        self.score = Score()
+        self.music_playing = False
+        self.ending_playing = False
+        self.clock()
+
+    def game_state(self):
+        self.game_active = False
+
+    def clock(self):
+        self.clocktime = pygame.time.Clock()
+
+    def colisions(self):
+        for obstacle_rect in self.enemie.obstacle_rect_list:
+            if obstacle_rect.colliderect(self.player.player_rect):
+                self.game_active = False
+                print('colision')
+
+    def loop_event(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                exit()
+            if self.game_active:
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    self.player.mouse_jump(event.pos)
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
+                        self.player.player_jump()
+                if event.type == self.enemie.obstacle_timer:
+                    new_obstacle_x = randint(900, 1000)
+                    new_obstacle_rect = self.enemie.get_surface().get_rect(midbottom=(new_obstacle_x, 300))
+
+                    # Verifica se o novo inimigo está longe o suficiente dos inimigos existentes
+                    if all(abs(new_obstacle_rect.x - existing_obstacle.x) > self.enemie.min_distance for existing_obstacle in self.enemie.obstacle_rect_list):
+                        self.enemie.obstacle_rect_list.append(new_obstacle_rect)
+
+            else:
+                if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                    self.game_active = True
+                    self.enemie.obstacle_rect_list = []
+                    self.score.reset_score()
+                    self.ending_playing = False
+                    self.music_playing = False
+                    # Obtém e traduz uma nova piada
+                    self.surface.joke = self.surface.get_and_translate_joke()
+
+    def run(self):
+        while True:
+            self.loop_event()
+            
+            # Apenas executa a gravidade e animação enquanto o jogo está ativo
+            if self.game_active:
+                self.player.player_gravity()
+                self.player.animate()
+                self.enemie.animate()
+
+                if not self.music_playing:  # Tocar a OST apenas uma vez por ciclo de jogo
+                    self.music.get_ost()
+                    self.music_playing = True
+                    self.ending_playing = False  
+
+                self.enemie.update_obstacles()  # Atualiza a posição dos obstáculos
+                self.colisions()  # Verifica se o jogador colidiu com algum inimigo
+                self.score.score_surface()  # Atualiza a pontuação
+                self.surface.draw(self.player, self.enemie, self.score)  # Desenha na tela
+
+            else:
+                if not self.ending_playing and self.score.current_time != 0:
+                    pygame.mixer.music.stop()  # Para a OST quando o jogo termina
+                    self.music.get_ending()  # Toca a música de encerramento
+                    self.ending_playing = True
+
+                # Configura a piada de game over apenas uma vez
+                if not self.surface.joke:
+                    self.surface.joke = self.surface.get_and_translate_joke()
+
+                self.surface.show_game_over(self.score.current_time, self.game_active)
+
+            pygame.display.update()  # Atualiza a tela
+            self.clocktime.tick(60)  # Mantém 60 FPS
