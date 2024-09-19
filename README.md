@@ -53,7 +53,7 @@ Este software é projetado para funcionar apenas em sistemas desktop. Atualmente
 
 
 
-##Créditos aos artistas:
+## Créditos Aos Artistas 
 - Sprites Kingdom Hearts Chain of Memories: https://www.spriters-resource.com/game_boy_advance/khcom/sheet/1029/
 
 - Night Sky: https://br.pinterest.com/pin/747175394421726688/   - Jezz Andz
