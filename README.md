@@ -5,7 +5,7 @@ a criação de um jogo(critério por: vozes da minha cabeça).
 
 A API utilizada foi a "JokeAPI" que gera piadas aleatórias.  Ela foi utilizada para fazer piadas no contexto da programação sempre que o jogador perder.
 O projeto em si tenta recriar uma versão simplista  do jogo "DinoChrome", porém com um toque pessoal dos jogos que que marcaram a infância do autor.
-Todas as sprites e músicas *NÃO* foram criados do zero, e este projeto tem apenas como objetivo aprender mais sobre o desenvolvimento de jogos utilizando a biblioteca PYGAME
+Todas as sprites e músicas *NÃO* foram criadas do zero, e este projeto tem apenas como objetivo aprender mais sobre o desenvolvimento de jogos utilizando a biblioteca PYGAME
 e consumo de API.
 
 
