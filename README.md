@@ -1,4 +1,4 @@
-"No matter where you are, the light wll always find you" - KING MICKEY.
+## "No matter where you are, the light wll always find you" - KING MICKEY.
 
 Este é um projeto acadêmico que teve como objetivos: o consumo de API(critério necessário para prova da disciplina Desenvolvimento Web 3) e
 a criação de um jogo(critério por: vozes da minha cabeça).
@@ -68,8 +68,9 @@ https://pt.wikipedia.org/wiki/Sonic_the_Hedgehog_2#:~:text=O%20jogo%20foi%20diri
 
 
 
-"Even in the deepest darkness, there's light"
-- Kingdom HeartsII final  mix
+## "Even in the deepest darkness, there's light"
+
+Kingdom HeartsII final  mix
 
 
 
