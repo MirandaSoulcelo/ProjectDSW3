@@ -1,6 +1,6 @@
 "No matter where you are, the light wll always find you" - KING MICKEY.
 
-Este é um projeto de estudo onde teve como objetivos, o consumo de APi(critério necessário para prova da disciplina Desenvolvimento Web 3) e
+Este é um projeto acadêmico que teve como objetivos: o consumo de API(critério necessário para prova da disciplina Desenvolvimento Web 3) e
 a criação de um jogo(critério por: vozes da minha cabeça).
 
 A API utilizada foi a "JokeAPI" que gera piadas aleatórias.  Ela foi utilizada para fazer piadas no contexto da programação sempre que o jogador perder.
