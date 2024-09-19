@@ -55,7 +55,10 @@ Este software é projetado para funcionar apenas em sistemas desktop(testado ape
 
 
 
-
+## Instalação
+- para utilizar as dependências necessárias, baixe os arquivos deste projeto.
+- Após isto, abra o prompt de comando(digite cmd na barra de pesquisa do Windows) e digite "pip install -r requirements.txt"
+-  rode no editor de código que preferir.
 
 
 ## Créditos Aos Artistas 
