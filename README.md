@@ -1,4 +1,4 @@
-## "No matter where you are, the light wll always find you" - KING MICKEY.
+## "No matter where you are, the light will always find you" - KING MICKEY.
 
 Este é um projeto acadêmico que teve como objetivo: o consumo de API(critério necessário para prova da disciplina Desenvolvimento Web 3) e
 a criação de um jogo(critério por: vozes da minha cabeça).
