@@ -28,8 +28,11 @@ e consumo de API.
 
 Ferramentas  utilizadas:
 Pygame: https://www.pygame.org/docs/ref/pygame.html
+
 requests: https://pypi.org/project/requests/
+
 Joke Api: https://v2.jokeapi.dev/
+
 Linguagem utilizada: Python 3.12.6
 
 
