@@ -29,10 +29,18 @@ e consumo de API.
 
 
 
-Ferramentas  utilizadas:
-Pygame: https://www.pygame.org/docs/ref/pygame.html
+## Requisitos
 
-requests: https://pypi.org/project/requests/
+Este software é projetado para funcionar apenas em sistemas desktop. Atualmente, não há suporte para versões móveis ou web.
+
+
+
+- Pygame: https://www.pygame.org/docs/ref/pygame.html
+
+- requests: https://pypi.org/project/requests/
+  
+- requirements.txt: No projeto
+  
 
 Joke Api: https://v2.jokeapi.dev/
 
