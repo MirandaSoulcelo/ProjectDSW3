@@ -7,9 +7,9 @@ class Player:
         self.player_rectangle()
         self.is_jumping = False
         self.gravity = 0
-        self.jump_strength = -20
+        self.jump_strength = -16
 
-        self.animation_speed = 0.2  
+        self.animation_speed = 0.25  
 
     def player_surfaces(self):
    

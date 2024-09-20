@@ -32,7 +32,7 @@ class Enemie:
 
     def timer(self):
         self.obstacle_timer = pygame.USEREVENT + 1
-        pygame.time.set_timer(self.obstacle_timer, 800)  # Intervalo para criar novos inimigos
+        pygame.time.set_timer(self.obstacle_timer, 750)  # Intervalo para criar novos inimigos
     
     def animate(self):
         
@@ -44,5 +44,5 @@ class Enemie:
 
     def update_obstacles(self):
         for obstacle_rect in self.obstacle_rect_list:
-            obstacle_rect.x -= randint(4, 13) 
+            obstacle_rect.x -= randint(5, 13) 
         self.obstacle_rect_list = [obstacle_rect for obstacle_rect in self.obstacle_rect_list if obstacle_rect.right > 0]
