@@ -7,7 +7,7 @@ class Enemie:
         self.enemie_surface()
         self.timer()
         self.obstacle_rect_list = []
-        self.min_distance = 250  # Ajuste conforme necessário
+        self.min_distance = 300  # Ajuste conforme necessário
         self.animation_speed = 0.2
 
     def enemie_surface(self):
@@ -32,7 +32,7 @@ class Enemie:
 
     def timer(self):
         self.obstacle_timer = pygame.USEREVENT + 1
-        pygame.time.set_timer(self.obstacle_timer, 700)  # Intervalo para criar novos inimigos
+        pygame.time.set_timer(self.obstacle_timer, 800)  # Intervalo para criar novos inimigos
     
     def animate(self):
         
