@@ -1,10 +1,10 @@
-## "No matter where you are, the light wll always find you" - KING MICKEY.
+## "No matter where you are, the light will always find you" - KING MICKEY.
 
 Este é um projeto acadêmico que teve como objetivo: o consumo de API(critério necessário para prova da disciplina Desenvolvimento Web 3) e
 a criação de um jogo(critério por: vozes da minha cabeça).
 
-A API utilizada foi a "JokeAPI" que gera piadas aleatórias. Com ela foi possível gerar piadas no contexto da programação sempre que o jogador perder.
-O projeto em si tenta recriar uma versão simplista  do jogo "DinoChrome", porém com um toque pessoal dos jogos que que marcaram a infância do autor.
+A API utilizada foi a "JokeAPI" que gera piadas aleatórias. Com ela foi possível gerar piadas no contexto da programação sempre que o jogador colidir contra um inimigo.
+O projeto em si tenta recriar uma versão simplista  do jogo "DinoChrome", porém com um toque pessoal dos jogos que marcaram a infância do autor.
 Todas as sprites e músicas *NÃO* foram criadas do zero, e este projeto tem apenas como objetivo aprender mais sobre o desenvolvimento de jogos utilizando a biblioteca PYGAME
 e consumo de API.
 
@@ -55,7 +55,10 @@ Este software é projetado para funcionar apenas em sistemas desktop(testado ape
 
 
 
-
+## Instalação
+- para utilizar as dependências necessárias, baixe os arquivos deste projeto.
+- Após isto, abra o prompt de comando(digite cmd na barra de pesquisa do Windows) e digite "pip install -r requirements.txt"(lembre-se de acessar no diretório onde o arquivo se encontra).
+-  rode no editor de código que preferir.
 
 
 ## Créditos Aos Artistas 
@@ -64,6 +67,8 @@ Este software é projetado para funcionar apenas em sistemas desktop(testado ape
 - Night Sky: https://br.pinterest.com/pin/747175394421726688/   - Jezz Andz
 
 - Ground: https://github.com/clear-code-projects/UltimatePygameIntro
+
+- Fontes utilizadas: https://github.com/clear-code-projects/UltimatePygameIntro
 
 - Kingdom Hearts OST "Heartless Theme": https://en.wikipedia.org/wiki/Music_of_Kingdom_Hearts
 
