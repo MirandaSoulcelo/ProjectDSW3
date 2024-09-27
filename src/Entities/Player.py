@@ -14,14 +14,14 @@ class Player:
     def player_surfaces(self):
    
         self.run_frames = [
-            pygame.image.load('graphics/PlayerSoraJump/Runningsora8.png').convert_alpha(),
-            pygame.image.load('graphics/PlayerSoraJump/Runningsora7.png').convert_alpha(),
-            pygame.image.load('graphics/PlayerSoraJump/Runningsora6.png').convert_alpha(),
-            pygame.image.load('graphics/PlayerSoraJump/Runningsora5.png').convert_alpha(),
-            pygame.image.load('graphics/PlayerSoraJump/Runningsora4.png').convert_alpha(),
-            pygame.image.load('graphics/PlayerSoraJump/Runningsora3.png').convert_alpha(),
-            pygame.image.load('graphics/PlayerSoraJump/Runningsora2.png').convert_alpha(),
-            pygame.image.load('graphics/PlayerSoraJump/Runningsora1.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/runningsora8.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/runningsora7.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/runningsora6.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/runningsora5.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/runningsora4.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/runningsora3.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/runningsora2.png').convert_alpha(),
+            pygame.image.load('graphics/PlayerSoraJump/runningsora1.png').convert_alpha(),
         ]
         self.player_surf = self.run_frames[self.frame_index]
 
